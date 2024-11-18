@@ -1,0 +1,56 @@
+.container {
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+  justify-items: center;
+
+  section {
+    width: 400px;
+    color: var(--text-dark);
+    background-image: var(--backg-img);
+    border-radius: 45px;
+    padding: 50px 101px;
+  }
+}
+
+.ingredients {
+  li {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+  button {
+    width: 30px;
+    height: 30px;
+    font-size: 15px;
+    color: var(--text-light);
+    background-color: var(--background);
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out;
+    padding: 6px;
+    &.active {
+      padding: 8px;
+      transform: rotate(-360deg);
+    }
+  }
+}
+
+.active {
+  color: rgb(106, 170, 9);
+}
+
+.recepie {
+  display: flex;
+  align-items: center;
+}
+
+.generateBtn {
+  height: 50px;
+  background-color: var(--background);
+  color: var(--text-light);
+  border-radius: 6px;
+  text-wrap: nowrap;
+  padding: 0 10px;
+}

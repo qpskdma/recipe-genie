@@ -1,0 +1,26 @@
+.container,
+.navWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.container {
+  color: var(--text-dark);
+  background-image: var(--backg-img);
+  height: 92px;
+  position: fixed;
+  column-gap: 130px;
+  width: 100%;
+  padding: 0 10vw;
+  justify-content: space-between;
+  h1::before {
+    content: url("/Sup.svg");
+    margin-right: 5px;
+  }
+}
+
+.navWrapper {
+  column-gap: 60px;
+  justify-content: center;
+}
