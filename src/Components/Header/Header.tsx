@@ -16,15 +16,15 @@ const Header: React.FC<HeaderProps> = ({}) => {
           <li>
             <Link href={"/"}>Рецепты</Link>
           </li>
-          <li>
+          {/* <li>
             <Link href={"/"}>Новинки</Link>
-          </li>
+          </li> */}
           <li>
             <Link href={"/"}>О нас</Link>
           </li>
         </ul>
       </nav>
-      <Link href={"/"}>
+      <Link href={"/"} className={styles.loginBtn}>
         <button>Вход</button>
       </Link>
     </header>
