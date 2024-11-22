@@ -1,67 +1,32 @@
 .container {
   width: 100vw;
-  height: 500px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  justify-content: space-between;
-  justify-items: center;
+  height: 110vh;
+  display: flex;
+  justify-content: center;
   text-wrap: nowrap;
-
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
   section {
-    width: 400px;
     color: var(--text-dark);
-    background-image: var(--backg-img);
-    border-radius: 45px;
-    padding: 50px 101px;
-  }
-  &:nth-child(2) {
-    max-height: 440px;
-  }
-}
-
-.ingredients {
-  .ingredient:hover {
-    cursor: pointer;
-  }
-
-  li {
+    width: 450px;
+    height: 100%;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-bottom: 15px;
-  }
-  button {
-    width: 30px;
-    height: 30px;
-    font-size: 15px;
-    color: var(--text-light);
-    background-color: var(--background);
-    border-radius: 50%;
-    transition: transform 0.3s ease-in-out;
-    padding: 6px;
-    &.active {
-      padding: 8px;
-      transform: rotate(-360deg);
-    }
-  }
-}
-
-.active {
-  color: rgb(106, 170, 9);
-}
-
-@media (max-width: 800px) {
-  .container {
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+    row-gap: 20px;
+    justify-content: space-around;
     align-items: center;
+    padding: 20px;
+    background-color: var(--back-light);
+    backdrop-filter: blur(0.65em);
+
+    border-radius: 45px;
+    text-align: center;
   }
 }
 
-.recipe {
+.recepie {
   max-height: 440px;
+  overflow: hidden;
 }
 
 .arrowBtn {
@@ -70,12 +35,38 @@
   justify-content: center;
 }
 
-// .ingredient {
-//   opacity: 0;
-//   transform: translateY(-20px);
-//   transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-// }
-// .ingredient.show {
-//   opacity: 1;
-//   transform: translateY(0);
-// }
+.questionWrapper {
+  margin-top: 50px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  button {
+    font-size: 16px;
+    width: 270px;
+    padding: 10px;
+    border: 2px solid var(--background);
+    &:hover {
+      cursor: pointer;
+      // color: rgb(108, 94, 83);
+      background-color: rgba(108, 94, 83, 0.5);
+      animation: gelatine 0.5s infinite;
+    }
+  }
+}
+
+@keyframes gelatine {
+  from,
+  to {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(0.9, 1.1);
+  }
+  50% {
+    transform: scale(1.1, 0.9);
+  }
+  75% {
+    transform: scale(0.95, 1.05);
+  }
+}

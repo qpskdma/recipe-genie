@@ -1,40 +1,21 @@
-.container,
-.navWrapper {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
 .container {
-  color: var(--text-dark);
-  background-image: var(--backg-img);
-  height: 92px;
+  height: 10vh;
+  width: 100vw;
+  background-color: rgba(236, 231, 223, 0.5);
+  backdrop-filter: blur(0.6em);
   position: fixed;
-  column-gap: 130px;
-  width: 100%;
-  padding: 0 10vw;
-  justify-content: space-between;
   z-index: 1000;
-  h1::before {
-    content: url("/Sup.svg");
-    margin-right: 5px;
-  }
-}
-
-.navWrapper {
-  column-gap: 60px;
+  display: flex;
   justify-content: center;
-}
-
-.loginBtn {
-  padding: 10px 20px;
-  border: 2px solid var(--background);
-  border-radius: 7px;
-  transition: 0.2s;
-  &:hover {
-    background-color: rgb(225, 216, 201);
-  }
-  &:hover::after {
-    width: 0px;
+  align-items: center;
+  .logo {
+    display: flex;
+    flex-direction: row;
+    &:hover {
+      cursor: pointer;
+    }
+    img {
+      margin-top: -4px;
+    }
   }
 }

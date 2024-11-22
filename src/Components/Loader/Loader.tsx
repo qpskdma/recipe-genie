@@ -1,17 +1,10 @@
 import React from "react";
 import styles from "./Loader.module.scss";
 
-interface LoaderProps {}
-
-const Loader: React.FC<LoaderProps> = ({}) => {
+const Loader: React.FC = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.cooking}>
-        <div className={styles.bubble}></div>
-        <div className={styles.bubble}></div>
-        <div className={styles.bubble}></div>
-        <div className={styles.bubble}></div>
-        <div className={styles.bubble}></div>
         <div className={styles.area}>
           <div className={styles.sides}>
             <div className={styles.pan}></div>

@@ -2,13 +2,18 @@ import Link from "next/link";
 import React from "react";
 import styles from "./Header.module.scss";
 
-interface HeaderProps {}
-
-const Header: React.FC<HeaderProps> = ({}) => {
+const Header: React.FC = () => {
   return (
     <header className={styles.container}>
-      <h1 className={styles.logo}>Recipe Genie</h1>
-      <nav>
+      <div className={styles.logo}>
+        <div>
+          <img src="/Sup.svg" alt="" />
+        </div>
+        <Link href={"/"}>
+          <h1>Recipe Genie</h1>
+        </Link>
+      </div>
+      {/* <nav>
         <ul className={styles.navWrapper}>
           <li>
             <Link href={"/main"}>Главная</Link>
@@ -16,17 +21,17 @@ const Header: React.FC<HeaderProps> = ({}) => {
           <li>
             <Link href={"/"}>Рецепты</Link>
           </li>
-          {/* <li>
-            <Link href={"/"}>Новинки</Link>
-          </li> */}
+          <li>
+            <Link href={"/fast-recipes"}>Подобрать рецепт</Link>
+          </li>
           <li>
             <Link href={"/"}>О нас</Link>
           </li>
         </ul>
-      </nav>
-      <Link href={"/"} className={styles.loginBtn}>
+      </nav> */}
+      {/* <Link href={"/"} className={styles.loginBtn}>
         <button>Вход</button>
-      </Link>
+      </Link> */}
     </header>
   );
 };

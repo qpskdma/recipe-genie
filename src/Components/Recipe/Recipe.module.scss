@@ -1,0 +1,128 @@
+.back {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  color: var(--text-dark);
+  width: 50vw;
+  height: 90vh;
+  position: relative;
+  background-color: var(--back-light);
+  backdrop-filter: blur(0.65em);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin-top: 10vh;
+  // padding-top: 15px;
+  box-sizing: border-box;
+}
+
+.title {
+  font-size: 25px;
+  font-style: italic;
+  margin-bottom: 15px;
+}
+
+.introItem {
+  height: 300px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  p {
+    position: relative;
+    padding-left: 25px;
+  }
+  p::before {
+    content: "-";
+    position: absolute;
+    font-size: 20px;
+    left: 13px;
+    top: 0;
+    color: rgb(215, 125, 49);
+  }
+}
+
+.properties {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 15px;
+  div {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+.prop {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.propIcon {
+  display: flex;
+  flex-direction: row;
+  column-gap: 5px;
+  font-weight: 900;
+}
+
+.image {
+  max-width: 300px;
+  object-fit: contain;
+  border-radius: 16px;
+}
+
+.main {
+  padding: 30px;
+  p {
+    font-size: 20px;
+    font-style: italic;
+    margin-bottom: 15px;
+  }
+  .ingr {
+    position: relative;
+    padding-left: 25px;
+    &::before {
+      content: "·";
+      color: rgb(215, 125, 49);
+      position: absolute;
+      left: 13px;
+      top: 0;
+    }
+  }
+}
+
+.instructions {
+  margin-top: 25px;
+}
+
+.list li {
+  list-style-type: decimal;
+  margin-left: 20px;
+}
+
+.repeat {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 1260px) {
+  .container {
+    width: auto;
+  }
+}

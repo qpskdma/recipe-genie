@@ -1,5 +1,55 @@
-.page {
+.title {
+  font-size: 55px;
+  line-height: 60px;
+  margin-bottom: 20px;
 }
 
-.main {
+.subtitle {
+  font-size: 25px;
+}
+
+.container {
+  width: 100vw;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  // overflow: hidden;
+}
+
+.textWrapper {
+  text-transform: none;
+  color: var(--text-dark);
+  width: 50vw;
+  height: auto;
+  background-color: var(--back-light);
+  backdrop-filter: blur(0.65em);
+  padding: 30px;
+}
+
+.textBtns {
+  margin-top: 5vh;
+}
+
+.btnWrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  align-items: center;
+}
+
+.btn {
+  font-size: 16px;
+  width: 270px;
+  padding: 10px;
+  border: 2px solid var(--background);
+  a:hover::after {
+    width: 0;
+  }
+  &:hover {
+    background-color: rgba(108, 94, 83, 0.5);
+    backdrop-filter: blur(0.65em);
+  }
 }

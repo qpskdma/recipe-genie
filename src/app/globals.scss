@@ -1,6 +1,7 @@
 :root {
   --background: rgb(58, 49, 42);
-  --background-dark: rgb(41, 34, 29);
+  // --background-dark: rgb(41, 34, 29);
+  --back-light: rgba(255, 255, 255, 0.5);
   --text-light: rgb(236, 231, 223);
   --text-dark: rgb(58, 49, 42);
 
@@ -25,8 +26,10 @@ html {
 }
 
 body {
-  color: var(--text-light);
-  background: var(--background);
+  position: relative;
+  color: var(--text-dark);
+  background: url("/Bckg.jpg");
+  background-size: cover;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: flex;
@@ -41,11 +44,7 @@ body {
 }
 
 main {
-  margin: 92px 10vw;
-}
-
-section {
-  margin-top: 80px;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 li {
@@ -66,28 +65,28 @@ button {
   }
 }
 
-@mixin link-animation {
-  position: relative;
-  display: inline-flex;
-  &::after {
-    content: "";
-    width: 0;
-    height: 2px;
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    translate: -50%;
-    background-color: currentColor;
-    transition-duration: 0.2s;
-  }
-  &:hover::after {
-    width: 100%;
-  }
-}
+// @mixin link-animation {
+//   position: relative;
+//   display: inline-flex;
+//   &::after {
+//     content: "";
+//     width: 0;
+//     height: 2px;
+//     position: absolute;
+//     top: 100%;
+//     left: 50%;
+//     translate: -50%;
+//     background-color: currentColor;
+//     transition-duration: 0.2s;
+//   }
+//   &:hover::after {
+//     width: 100%;
+//   }
+// }
 
-a {
-  @include link-animation;
-}
+// a {
+//   @include link-animation;
+// }
 
 input {
   height: 50px;
