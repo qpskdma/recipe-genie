@@ -5,6 +5,7 @@
   --text-light: rgb(236, 231, 223);
   --text-dark: rgb(58, 49, 42);
 
+  --background-img: url("/Background.jpeg");
   --backg-img: url("/BckgLight.jpg");
 }
 
@@ -28,7 +29,7 @@ html {
 body {
   position: relative;
   color: var(--text-dark);
-  background: url("/Bckg.jpg");
+  background: var(--background-img);
   background-size: cover;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

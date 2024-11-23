@@ -10,29 +10,41 @@ interface RecipeProps {
 }
 
 const RecipePage: React.FC<RecipeProps> = ({ recipes }) => {
-  const [translatedIngr, setTranslatedIngr] = useState([]);
-  const [translatedInstr, setTranslatedInstr] = useState([]);
+  const [translatedIngr, setTranslatedIngr] = useState<string[]>([]);
+  const [translatedInstr, setTranslatedInstr] = useState<string[]>([]);
+  const [translatedTitle, setTranslatedTitle] = useState("");
 
+  const untranslaytedTitle = recipes.name;
   const untranslaytedIngr = recipes.ingredients.join("|*|");
   const untranslaytedInstr = recipes.instructions.join("|*|");
 
   useEffect(() => {
     const handleTranslate = async () => {
       try {
-        const [nameResponse, descriptionResponse] = await Promise.all([
-          axios.get("https://api.mymemory.translated.net/get", {
-            params: {
-              q: untranslaytedIngr,
-              langpair: `en|ru`,
-            },
-          }),
-          axios.get("https://api.mymemory.translated.net/get", {
-            params: {
-              q: untranslaytedInstr,
-              langpair: `en|ru`,
-            },
-          }),
-        ]);
+        const [nameResponse, descriptionResponse, titleResponse] =
+          await Promise.all([
+            axios.get("https://api.mymemory.translated.net/get", {
+              params: {
+                q: untranslaytedIngr,
+                langpair: `en|ru`,
+              },
+            }),
+            axios.get("https://api.mymemory.translated.net/get", {
+              params: {
+                q: untranslaytedInstr,
+                langpair: `en|ru`,
+              },
+            }),
+            axios.get("https://api.mymemory.translated.net/get", {
+              params: {
+                q: untranslaytedTitle,
+                langpair: `en|ru`,
+              },
+            }),
+          ]);
+        setTranslatedTitle(
+          titleResponse.data.responseData.translatedText.split("|*|")
+        );
         setTranslatedIngr(
           nameResponse.data.responseData.translatedText.split("|*|")
         );
@@ -41,6 +53,9 @@ const RecipePage: React.FC<RecipeProps> = ({ recipes }) => {
         );
       } catch (error) {
         console.error("Error translating text:", error);
+        setTranslatedTitle(recipes.name);
+        setTranslatedIngr(recipes.ingredients);
+        setTranslatedInstr(recipes.instructions);
       }
     };
     handleTranslate();
@@ -53,7 +68,7 @@ const RecipePage: React.FC<RecipeProps> = ({ recipes }) => {
         <div className={styles.introItem}>
           <img className={styles.image} src={recipes.image} alt="" />
           <div className={styles.description}>
-            <h3 className={styles.title}>{recipes.name}</h3>
+            <h3 className={styles.title}>{translatedTitle}</h3>
             <div className={styles.properties}>
               <div className={styles.prop}>
                 <div className={styles.propIcon}>

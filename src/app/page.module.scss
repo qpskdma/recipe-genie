@@ -16,7 +16,6 @@
   align-items: center;
   margin-top: 10vh;
   background-color: rgba(0, 0, 0, 0.3);
-  // overflow: hidden;
 }
 
 .textWrapper {
@@ -49,7 +48,19 @@
     width: 0;
   }
   &:hover {
-    background-color: rgba(108, 94, 83, 0.5);
+    background-color: rgba(108, 94, 83, 0.7);
     backdrop-filter: blur(0.65em);
+  }
+}
+
+@media (max-width: 1220px) {
+  .textWrapper {
+    width: 70vw;
+  }
+}
+
+@media (max-width: 660px) {
+  .textWrapper {
+    width: 100vw;
   }
 }
